@@ -1,1 +1,1 @@
-CREATE SCHEMA `nw202203` ;
+CREATE SCHEMA `cosmic_comics` ;
