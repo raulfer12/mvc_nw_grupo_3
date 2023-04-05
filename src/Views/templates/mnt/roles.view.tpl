@@ -1,4 +1,4 @@
-<h1>Gestión de Categorías</h1>
+<h1>Gestión de Roles</h1>
 <section class="WWFilter">
 
 </section>
@@ -19,7 +19,7 @@
     <tbody>
       {{foreach roles}}
       <tr>
-        <td>{{catid}}</td>
+        <td>{{rol_id}}</td>
         <td><a href="index.php?page=Mnt_Rol&mode=DSP&rol_id={{rol_id}}">{{rol_dsc}}</a></td>
         <td>{{rol_est}}</td>
         <td>
@@ -50,7 +50,7 @@
       document.getElementById("btnAdd").addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
-        window.location.assign("index.php?page=mnt_rol&mode=INS&rol_id=0");
+        window.location.assign("index.php?page=mnt_Rol&mode=INS&rol_id=0");
       });
     });
 </script>
