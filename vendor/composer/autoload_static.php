@@ -84,6 +84,7 @@ class ComposerStaticInitac2d9af57f58614faa56a4064e8533c4
             'PhpParser\\' => 10,
             'PayPalHttp\\' => 11,
             'PayPalCheckoutSdk\\' => 18,
+            'PHPStan\\PhpDocParser\\' => 21,
         ),
         'M' => 
         array (
@@ -316,6 +317,10 @@ class ComposerStaticInitac2d9af57f58614faa56a4064e8533c4
         'PayPalCheckoutSdk\\' => 
         array (
             0 => __DIR__ . '/..' . '/paypal/paypal-checkout-sdk/lib/PayPalCheckoutSdk',
+        ),
+        'PHPStan\\PhpDocParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src',
         ),
         'Monolog\\' => 
         array (
