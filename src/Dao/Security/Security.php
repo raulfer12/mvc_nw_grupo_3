@@ -235,38 +235,38 @@
             );
         }
 
-        static public function getFeature($FuncionId)
+        static public function getFeature($funcion_id)
         {
-            $sqlstr = "SELECT * FROM funciones WHERE FuncionId=:FuncionId;";
-            $featuresList = self::obtenerRegistros($sqlstr, array("FuncionId"=>$FuncionId));
+            $sqlstr = "SELECT * FROM funciones WHERE funcion_id=:funcion_id;";
+            $featuresList = self::obtenerRegistros($sqlstr, array("funcion_id"=>$funcion_id));
             return count($featuresList) > 0;
         }
 
-        static public function addNewFeature($FuncionId, $FuncionDsc, $FuncionEst, $FuncionTipo)
+        static public function addNewFeature($funcion_id, $funcion_dsc, $funcion_est, $funcion_tipo)
         {
-            $sqlins = "INSERT INTO `funciones` (`FuncionId`, `FuncionDsc`, `FuncionEst`, `FuncionTipo`)
-                VALUES (:FuncionId , :FuncionDsc , :FuncionEst , :FuncionTipo);";
+            $sqlins = "INSERT INTO `funciones` (`funcion_id`, `funcion_dsc`, `funcion_est`, `funcion_tipo`)
+                VALUES (:funcion_id , :funcion_dsc , :funcion_est , :funcion_tipo);";
 
             return self::executeNonQuery(
                 $sqlins,
                 array(
-                    "FuncionId" => $FuncionId,
-                    "FuncionDsc" => $FuncionDsc,
-                    "FuncionEst" => $FuncionEst,
-                    "FuncionTipo" => $FuncionTipo
+                    "funcion_id" => $funcion_id,
+                    "funcion_dsc" => $funcion_dsc,
+                    "funcion_est" => $funcion_est,
+                    "funcion_tipo" => $funcion_tipo
                 )
             );
         }
 
-        static public function getFeatureByUsuario($usuario_id, $FuncionId)
+        static public function getFeatureByUsuario($usuario_id, $funcion_id)
         {
             $sqlstr = "SELECT * from funcionesroles a INNER JOIN rolesusuario b ON a.rol_id = b.rol_id 
-            WHERE a.Funcionrol_est = 'ACT' AND b.usuario_id=:usuario_id AND a.FuncionId=:FuncionId LIMIT 1;";
+            WHERE a.Funcionrol_est = 'ACT' AND b.usuario_id=:usuario_id AND a.funcion_id=:funcion_id LIMIT 1;";
             $resultados = self::obtenerRegistros(
                 $sqlstr,
                 array(
                     "usuario_id"=> $usuario_id,
-                    "FuncionId" => $FuncionId
+                    "funcion_id" => $funcion_id
                 )
             );
             return count($resultados) > 0;
